@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B站/A站聚合页</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f4f4f4; padding: 10px; }
+        .container { margin: 0 auto; max-width: 1000px; }
+        .item { 
+            background: #fff; 
+            margin-bottom: 15px; 
+            border-radius: 8px; 
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .item h3 { 
+            background: #00A1D6; 
+            color: white; 
+            padding: 10px 15px; 
+            font-size: 16px;
+        }
+        iframe { 
+            width: 100%; 
+            height: 600px; /* 电脑高度 */
+            border: none; 
+            display: block;
+        }
+        /* 手机自适应：高度缩小 */
+        @media (max-width: 768px) {
+            iframe { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 1. B站 极简防跳转播放器 -->
+    <div class="item">
+        <h3>1. B站极简播放器 (无跳转)</h3>
+        <iframe 
+            src="https://www.bilibili.com/blackboard/player.html?bvid=BV1AeXTBZEQd&disableRedirect=1&disableAutoJump=1"
+            allowfullscreen
+            sandbox="allow-same-origin allow-scripts allow-presentation allow-popups">
+        </iframe>
+    </div>
+
+    <!-- 2. B站 完整主站 (带评论) -->
+    <div class="item">
+        <h3>2. B站完整主站 (带评论)</h3>
+        <iframe 
+            src="https://www.bilibili.com/video/BV1AeXTBZEQd/?share_source=copy_web"
+            allowfullscreen
+            sandbox="allow-same-origin allow-scripts allow-presentation allow-popups allow-top-navigation-by-user-activation">
+        </iframe>
+    </div>
+
+    <!-- 3. A站 纯播放器 (主站无法嵌入，只能用播放器) -->
+    <div class="item">
+        <h3>3. A站纯播放器 (A站主站不支持嵌入)</h3>
+        <iframe 
+            src="https://www.acfun.cn/player/ac46966217"
+            allowfullscreen
+            sandbox="allow-same-origin allow-scripts allow-presentation allow-popups">
+        </iframe>
+    </div>
+
+</div>
+</body>
+</html>
